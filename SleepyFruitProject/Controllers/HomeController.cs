@@ -13,6 +13,11 @@ namespace SleepyFruitProject.Controllers
             _logger = logger;
         }
 
+        public IActionResult Question1()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
