@@ -30,6 +30,12 @@ namespace SleepyFruitProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //TODO:: go to quiz
+        public IActionResult QuizStart() 
+        {
+            return View();
+        }
+
 		public IActionResult yay()
 		{
 			return Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
