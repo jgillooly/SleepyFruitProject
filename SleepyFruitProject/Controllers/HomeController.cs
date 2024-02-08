@@ -23,6 +23,13 @@ namespace SleepyFruitProject.Controllers
             return View();
         }
 
+        //TODO:: actually log in
+        [HttpPost]
+        public IActionResult LogIn(string email, string password)
+        { 
+            return RedirectToAction("Index", "Home");
+        }
+
 		public IActionResult yay()
 		{
 			return Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
