@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Quiz\" />
     <Folder Include="wwwroot\Image\" />
   </ItemGroup>
 
