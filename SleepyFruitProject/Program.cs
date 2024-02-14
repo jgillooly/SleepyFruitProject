@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SleepyFruitProject.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace SleepyFruitProject
 {
@@ -14,6 +15,10 @@ namespace SleepyFruitProject
 
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false).AddDefaultUI().AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            builder.Services.AddRazorPages();
 
             var app = builder.Build();
 
@@ -25,8 +30,11 @@ namespace SleepyFruitProject
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();;
 
             app.UseAuthorization();
+
+            app.MapRazorPages();
 
             app.MapControllerRoute(
                 name: "default",
