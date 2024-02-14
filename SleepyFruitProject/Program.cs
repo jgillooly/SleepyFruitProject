@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SleepyFruitProject.Data;
+
 namespace SleepyFruitProject
 {
     public class Program
@@ -8,6 +11,9 @@ namespace SleepyFruitProject
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
             var app = builder.Build();
 
