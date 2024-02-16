@@ -36,6 +36,11 @@ namespace SleepyFruitProject.Controllers
             return View();
         }
 
+        public IActionResult InfoQuiz()
+        {
+            return View();
+        }
+
 		public IActionResult yay()
 		{
 			return Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
