@@ -1,10 +1,10 @@
 ﻿@model FinalGuess
 
-<form asp-controller="Home" asp-action="End_Fake" method="post">
+<form asp-controller="Home" asp-action="End_1" method="post">
 
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Add Movie</h2>
+			<h2 class="text-primary">Place Answers!</h2>
 			<hr />
 			<br />
 			<div asp-validation-summary="All" class="text-danger"></div>
@@ -25,21 +25,16 @@
 			<span asp-validation-for="Answer3" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
-			<label asp-for="Image"></label>
-			<input asp-for="Image" class="form-control" />
-			<span asp-validation-for="Image" class="text-danger"></span>
+			<label asp-for="Answer4"></label>
+			<input asp-for="Answer4" class="form-control" />
+			<span asp-validation-for="Answer4" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
-			<label asp-for="MPAARating"></label>
-			<input asp-for="MPAARating" class="form-control" />
-			<span asp-validation-for="MPAARating" class="text-danger"></span>
+			<label asp-for="Answer5"></label>
+			<input asp-for="Answer5" class="form-control" />
+			<span asp-validation-for="Answer5" class="text-danger"></span>
 		</div>
-		<div class="mb-3">
-			<label asp-for="Genere"></label>
-			<input asp-for="Genere" class="form-control" />
-			<span asp-validation-for="Genere" class="text-danger"></span>
-		</div>
-		<button type="submit" class="btn btn-primary">Add</button>
+		<button type="submit" class="btn btn-primary">Check</button>
 
 	</div>
 
