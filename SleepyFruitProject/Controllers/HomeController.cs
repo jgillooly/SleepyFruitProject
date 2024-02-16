@@ -17,12 +17,24 @@ namespace SleepyFruitProject.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        public IActionResult End_Fake()
+        { 
+            return View();
+        }
+        [HttpPost]
+        public IActionResult End_Fake(FinalGuess fg)
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
         }
-
+		public IActionResult FinishLine()
+		{
+			return View();
+		}
 		public IActionResult yay()
 		{
 			return Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
