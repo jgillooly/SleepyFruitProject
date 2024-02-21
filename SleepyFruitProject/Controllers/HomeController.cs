@@ -17,11 +17,13 @@ namespace SleepyFruitProject.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult End_1()
         { 
             return View();
         }
+
         [HttpPost]
         public IActionResult End_1(FinalGuess fg)
         {
@@ -76,8 +78,6 @@ namespace SleepyFruitProject.Controllers
         {
             return View();
         }
-
-		public IActionResult yay()
 		public IActionResult FinishLine()
 		{
 			return View();
