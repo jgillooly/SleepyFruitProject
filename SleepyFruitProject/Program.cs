@@ -27,7 +27,9 @@ namespace SleepyFruitProject
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles();
+			
+
+			app.UseStaticFiles();
 
             app.UseRouting();
             app.UseAuthentication();;
@@ -40,7 +42,11 @@ namespace SleepyFruitProject
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.Run();
+			app.MapControllerRoute(
+			   name: "FinishLine",
+			   pattern: "/finishthetest",
+			   defaults: new { controller = "Home", action = "FinishLine" });
+			app.Run();
         }
     }
 }
