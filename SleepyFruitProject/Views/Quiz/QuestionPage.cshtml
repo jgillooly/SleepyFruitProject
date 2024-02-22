@@ -1,4 +1,48 @@
 ﻿@model Question
 
+<div class="text-center">
+	<h1>Question @Model.num</h1>
+	<img src="@Model.img" height="300" />
+	<h2>@Model.TheQuestion</h2>
+	<div class="row m-5">
+		<div class="col-3"></div>
+		<div class="col-3">
+			<form asp-controller="Quiz" asp-action="QuestionPage">
+				<button type="submit" class="btn btn-info">
+					@Model.Answers[0].TheAnswer
+				</button>
+				<input class="form-check-input" name="correct" value="@Model.Answers[0].correct.ToString()" type="hidden" />
+			</form>
+		</div>
+		<div class="col-3">
+			<form asp-controller="Quiz" asp-action="QuestionPage">
+				<button type="submit" class="btn btn-info">
+					@Model.Answers[1].TheAnswer
+				</button>
+				<input class="form-check-input" name="correct" value="@Model.Answers[1].correct.ToString()" type="hidden" />
+			</form>
+		</div>
+	</div>
+	<div class="row m-5">
+		<div class="col-3"></div>
+		<div class="col-3">
+			<form asp-controller="Quiz" asp-action="QuestionPage">
+				<button type="submit" class="btn btn-info">
+					@Model.Answers[2].TheAnswer
+				</button>
+				<input class="form-check-input" name="correct" value="@Model.Answers[2].correct.ToString()" type="hidden" />
+			</form>
+		</div>
+		<div class="col-3">
+			<form asp-controller="Quiz" asp-action="QuestionPage">
+				<button type="submit" class="btn btn-info">
+					@Model.Answers[3].TheAnswer
+				</button>
+				<input class="form-check-input" name="correct" value="@Model.Answers[3].correct.ToString()" type="hidden" />
+			</form>
+		</div>
+	</div>
+</div>
+
 
 
