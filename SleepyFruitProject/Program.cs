@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using SleepyFruitProject.Data;
+using Microsoft.AspNetCore.Identity;
+
 namespace SleepyFruitProject
 {
     public class Program
@@ -9,6 +13,13 @@ namespace SleepyFruitProject
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false).AddDefaultUI().AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            builder.Services.AddRazorPages();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -16,17 +27,26 @@ namespace SleepyFruitProject
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles();
+			
+
+			app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();;
 
             app.UseAuthorization();
+
+            app.MapRazorPages();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.Run();
+			app.MapControllerRoute(
+			   name: "FinishLine",
+			   pattern: "/finishthetest",
+			   defaults: new { controller = "Home", action = "FinishLine" });
+			app.Run();
         }
     }
 }
