@@ -31,13 +31,8 @@ namespace SleepyFruitProject.Controllers
         }
 
         //TODO:: go to quiz
-        public IActionResult QuizStart() 
-        {
+        public IActionResult QuizStart() {
             return View();
-        }
-
-        public IActionResult Question2() {
-            return RedirectToAction();
         }
 
 		public IActionResult yay()
