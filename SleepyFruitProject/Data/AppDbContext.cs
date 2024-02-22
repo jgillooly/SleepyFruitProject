@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SleepyFruitProject.Models;
 
 namespace SleepyFruitProject.Data
 {
@@ -9,6 +10,5 @@ namespace SleepyFruitProject.Data
         {
 
         }
-
     }
 }
