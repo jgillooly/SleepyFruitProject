@@ -1,13 +1,31 @@
-﻿namespace SleepyFruitProject.Data
+﻿using SleepyFruitProject.Models;
+
+namespace SleepyFruitProject.Data
 {
     public class UserDal
     {
-        public User GetUser(int? id)
+        private AppDbContext db;
+        public UserDal(AppDbContext indb)
         {
-            //Movie? foundMovie = MovieList.Where(m => m.Id == id).FirstOrDefault();
-            User? foundMovie = db.Movies.Where(m => m.Id == id).Include(m => m.Genre).FirstOrDefault();
-            return foundMovie;
+            db = indb;
+        }
 
+        public User GetUser(string? id)
+        {
+            User? foundUser = db.OurUsers.Where(u => u.UserID == id).FirstOrDefault();
+            return foundUser;
+        }
+
+        public void AddUser(User user)
+        {
+            db.OurUsers.Add(user);
+            db.SaveChanges();
+        }
+
+        public void UpdateUser(User user)
+        {
+            db.OurUsers.Update(user);
+            db.SaveChanges();
         }
     }
 }

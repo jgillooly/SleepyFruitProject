@@ -10,6 +10,7 @@ namespace SleepyFruitProject.Models
 	{
 		[Key]
 		public int ID { get; set; }
+
 		public string? UserID { get; set; }
 		[Required]
 		public string UserName { get; set; } = string.Empty;
@@ -18,18 +19,28 @@ namespace SleepyFruitProject.Models
 		[EmailAddress]
 		public string Email { get; set; } = "";
 
-		protected static DateTime start_time;
-		protected static DateTime end_time;
-		public TimeSpan ElapsedTime = end_time - start_time;
+		public int question { get; set; } = 0;
 
-		User(int userId, string userName, string email, TimeSpan elapsedTime)
+		protected static DateTime start_time { get; set; }
+		protected static DateTime end_time { get; set; }
+		public TimeSpan ElapsedTime { get; set; } = end_time - start_time;
+
+		public User(int userId, string userName, string email, TimeSpan elapsedTime)
 		{
 			this.ID = userId;
 			this.UserName = userName;
 			this.Email = email;
 			this.ElapsedTime = elapsedTime;
 		}
-		User() 
+
+		public User(string UserID, string UserName, string Email)
+		{
+			this.UserID = UserID;
+			this.UserName = UserName;
+			this.Email = Email;
+		}
+
+		public User() 
 		{
 		}
 	}
