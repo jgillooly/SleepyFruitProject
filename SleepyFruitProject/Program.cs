@@ -42,7 +42,9 @@ namespace SleepyFruitProject
 				options.SignIn.RequireConfirmedPhoneNumber = false;
 			});
 
-			var app = builder.Build();
+            builder.Services.AddTransient<UserDal>();
+
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
