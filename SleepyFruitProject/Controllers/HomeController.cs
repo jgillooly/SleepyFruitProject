@@ -70,8 +70,7 @@ namespace SleepyFruitProject.Controllers
 
 
         //TODO:: go to quiz
-        public IActionResult QuizStart() 
-        {
+        public IActionResult QuizStart() {
             return View();
         }
         //
