@@ -7,19 +7,6 @@ using SleepyFruitProject.Models;
 namespace SleepyFruitProject.Controllers
 {
 	public class QuizController : Controller {
-        public UserDal dal;
-
-        private static List<Question> questions = new List<Question>() { 
-			new Question(1, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "Are Zebras black with white stripes or white with black stripes?",new List<Answer>() {new Answer("B&W", false), new Answer("W&B", false), new Answer ("Both", false), new Answer("Who Cares", true) }),
-			new Question(2, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "What's 9 + 10?",new List<Answer>() {new Answer("19", true), new Answer("21", false), new Answer ("You Stupid", false), new Answer("I don't like this game", false) }),
-			new Question(3, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "*coin flip* Call it...",new List<Answer>() {new Answer("Heads", false), new Answer("Tails", true), new Answer ("Neither", false), new Answer("Both", false) }),
-			new Question(4, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "Is the Lord of the Rings a good movie?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("It's trash", true), new Answer("*bleugh*", false) }),
-			new Question(5, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "Have you showered today?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("I'm a Neumont Student", true), new Answer("*sniff sniff*", false) }),
-			new Question(6, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "What is a grape?",new List<Answer>() {new Answer("Fruit", false), new Answer("Vegetable", false), new Answer ("Berry", true), new Answer("Smash", false) }),
-			new Question(7, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "What is the answer to this question?",new List<Answer>() {new Answer("What", false), new Answer("IDK", false), new Answer ("Found", false), new Answer("Sleepy", true) }),
-			new Question(8, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "What starts with e ends with e but only has one letter in it?",new List<Answer>() {new Answer("Enevelope", false), new Answer("E", true), new Answer ("Explore", false), new Answer("Exile", false) }),
-	public class QuizController : Controller
-	{
 		private static List<Question> questions = new List<Question>() 
 		{ 
 			new Question(1, "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984", "Test Question",new List<Answer>() {new Answer("One", false), new Answer("Two", true), new Answer ("Three", false), new Answer("Four", false) }),
@@ -42,6 +29,10 @@ namespace SleepyFruitProject.Controllers
 			new Question(15, "https://img.jagranjosh.com/images/2023/October/16102023/Find-the-missing-value-of-fruits.jpg", "You should know the answer.",new List<Answer>() {new Answer("3.14", false), new Answer("pie", true), new Answer("π", false), new Answer("fruitcake", false) }),
 			new Question(16, "https://madnews.wordpress.com/files/2008/01/soulja-boy.jpg", "Now watch me ________! Crank Dat...",new List<Answer>() {new Answer("U", true), new Answer("yo", false), new Answer("uhhhh", false), new Answer("Never heard that song.", false) })
 		};
+
+
+
+        public UserDal dal;
 		private static int questionNum = 0;
 
         public QuizController(UserDal indal)
