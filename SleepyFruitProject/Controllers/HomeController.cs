@@ -74,7 +74,7 @@ namespace SleepyFruitProject.Controllers
         {
             return View();
         }
-
+        //
         public IActionResult InfoQuiz()
         {
             return View();
