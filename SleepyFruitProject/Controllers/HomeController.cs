@@ -61,12 +61,13 @@ namespace SleepyFruitProject.Controllers
             return View();
         }
 
-        //TODO:: actually log in
-        [HttpPost]
-        public IActionResult LogIn(string email, string password)
-        { 
-            return RedirectToAction("Index", "Home");
-        }
+        ////TODO:: actually log in
+        //[HttpPost]
+        //public IActionResult LogIn(string email, string password)
+        //{ 
+        //    return RedirectToAction("Index", "Home");
+        //}
+
 
         //TODO:: go to quiz
         public IActionResult QuizStart() 
