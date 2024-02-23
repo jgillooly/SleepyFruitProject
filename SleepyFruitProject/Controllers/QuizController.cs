@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SleepyFruitProject.Models;
 
 namespace SleepyFruitProject.Controllers 
@@ -20,10 +21,12 @@ namespace SleepyFruitProject.Controllers
 
 		public IActionResult Index() 
 		{
+			questionNum = 0;
 			return View();
 		}
 
-		public IActionResult QuestionPage(bool correct) 
+        [Authorize]
+        public IActionResult QuestionPage(bool correct) 
 		{
 			if (correct)
 			{
