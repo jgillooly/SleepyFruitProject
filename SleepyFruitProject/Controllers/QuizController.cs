@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using SleepyFruitProject.Data;
 using SleepyFruitProject.Models;
 
-namespace SleepyFruitProject.Controllers 
+namespace SleepyFruitProject.Controllers
 {
 	public class QuizController : Controller {
 		private static List<Question> questions = new List<Question>() { 
@@ -16,27 +19,48 @@ namespace SleepyFruitProject.Controllers
 		};
 		private static int questionNum = 0;
 
-		public IActionResult Index() 
-		{
-			return View();
-		}
+        public QuizController(UserDal indal)
+        {
+            dal = indal;
 
-		public IActionResult QuestionPage(bool correct) 
-		{
-			if (correct)
-			{
-				questionNum++;
+        }
 
-				if(questionNum == questions.Count)
-				{
-					return RedirectToAction("End_1", "Home");
-				}
 
-				return View(questions[questionNum]);
-			} else
-			{
-				return View(questions[questionNum]);
-			}
-		}
-	}
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult QuestionPage()
+        {
+            questionNum = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)).question;
+            return View(questions[questionNum]);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult QuestionPage(bool correct)
+        {
+            if (correct)
+            {
+                questionNum++;
+                User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                temp.question = questionNum;
+                dal.UpdateUser(temp);
+
+                if (questionNum == questions.Count)
+                {
+                    return RedirectToAction("End_1", "Home");
+                }
+
+                return View(questions[questionNum]);
+            }
+            else
+            {
+                return View(questions[questionNum]);
+            }
+        }
+    }
 }
