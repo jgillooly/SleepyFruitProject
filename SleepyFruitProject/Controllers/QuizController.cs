@@ -4,6 +4,8 @@ using SleepyFruitProject.Models;
 namespace SleepyFruitProject.Controllers 
 {
 	public class QuizController : Controller {
+		Random Random = new Random();
+
 		private static List<Question> questions = new List<Question>() { 
 			new Question(1, "https://lasercraftum.com/cdn/shop/products/marty-the-zebra-madagascar-layered-design-for-cutting-246_1200x1200.jpg?v=1675266851", "Are Zebras black with white stripes or white with black stripes?",new List<Answer>() {new Answer("B&W", false), new Answer("W&B", false), new Answer ("Both", false), new Answer("Who Cares", true) }),
 			new Question(2, "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QEA8NDw8NDQ8NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUY" +
@@ -37,10 +39,17 @@ namespace SleepyFruitProject.Controllers
 			return View();
 		}
 
-		public IActionResult QuestionPage(bool correct) 
-		{
-			if (correct)
-			{
+		//method for setting up other questions
+		public void questionSetup() {
+			//question2
+			questions[2].Answers[0].correct = (Random.Next(2) == 0);
+			questions[2].Answers[1].correct = !questions[2].Answers[0].correct;
+		}
+
+		public IActionResult QuestionPage(bool correct) {
+			questionSetup();
+
+			if (correct) {
 				questionNum++;
 
 				if(questionNum == questions.Count)
