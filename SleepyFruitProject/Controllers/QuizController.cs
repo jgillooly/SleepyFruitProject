@@ -23,6 +23,7 @@ namespace SleepyFruitProject.Controllers
 
 		public IActionResult QuestionPage(bool correct) 
 		{
+			
 			if (correct)
 			{
 				questionNum++;
