@@ -1,16 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SleepyFruitProject.Data;
 using SleepyFruitProject.Models;
 using System.Diagnostics;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Claims;
 
 namespace SleepyFruitProject.Controllers
 {
     public class HomeController : Controller
     {
+        public UserDal dal;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UserDal indal)
         {
             _logger = logger;
+            dal = indal;
         }
 
         public IActionResult Question1()
@@ -20,7 +26,17 @@ namespace SleepyFruitProject.Controllers
 
         public IActionResult Index()
         {
+            if (!User.Identity.IsAuthenticated)
+            { 
+                return View();
+            }
+            if (dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)) == null ){
+                string UserID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                dal.AddUser(new User(User.FindFirstValue(ClaimTypes.NameIdentifier), User.FindFirstValue(ClaimTypes.Name), User.FindFirstValue(ClaimTypes.Email)));
+                return View();
+            }
             return View();
+
         }
 
         [HttpGet]
@@ -66,19 +82,19 @@ namespace SleepyFruitProject.Controllers
             return View();
         }
 
-        //TODO:: actually log in
-        [HttpPost]
-        public IActionResult LogIn(string email, string password)
-        { 
-            return RedirectToAction("Index", "Home");
-        }
+        ////TODO:: actually log in
+        //[HttpPost]
+        //public IActionResult LogIn(string email, string password)
+        //{ 
+        //    return RedirectToAction("Index", "Home");
+        //}
+
 
         //TODO:: go to quiz
-        public IActionResult QuizStart() 
-        {
+        public IActionResult QuizStart() {
             return View();
         }
-
+        //
         public IActionResult InfoQuiz()
         {
             return View();
