@@ -10,5 +10,6 @@ namespace SleepyFruitProject.Data
         {
 
         }
+        public DbSet<User> OurUsers { get; set; }
     }
 }

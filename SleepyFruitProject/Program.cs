@@ -20,6 +20,30 @@ namespace SleepyFruitProject
 
             builder.Services.AddRazorPages();
 
+			builder.Services.Configure<IdentityOptions>(options =>
+			{
+				//pasword settings
+				options.Password.RequireDigit = false;
+				options.Password.RequireLowercase = true;
+				options.Password.RequireUppercase = false;
+				options.Password.RequiredLength = 10;
+				options.Password.RequiredUniqueChars = 1;
+				options.Password.RequireNonAlphanumeric = true;
+				//lockout
+				options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+				options.Lockout.MaxFailedAccessAttempts = 5;
+				options.Lockout.AllowedForNewUsers = false;
+				//user
+				//options.User.AllowedUserNameCharacters =
+				//"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 -,_@+";
+				options.User.RequireUniqueEmail = true;
+				options.SignIn.RequireConfirmedAccount = false;
+				options.SignIn.RequireConfirmedEmail = false;
+				options.SignIn.RequireConfirmedPhoneNumber = false;
+			});
+
+            builder.Services.AddTransient<UserDal>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
