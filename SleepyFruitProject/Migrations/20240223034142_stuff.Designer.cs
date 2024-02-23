@@ -12,8 +12,8 @@ using SleepyFruitProject.Data;
 namespace SleepyFruitProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240214181617_Identity")]
-    partial class Identity
+    [Migration("20240223034142_stuff")]
+    partial class stuff
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

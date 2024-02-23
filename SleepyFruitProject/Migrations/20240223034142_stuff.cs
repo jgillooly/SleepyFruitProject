@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SleepyFruitProject.Migrations
 {
-    public partial class Identity : Migration
+    public partial class stuff : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
