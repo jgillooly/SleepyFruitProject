@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SleepyFruitProject.Data;
 using SleepyFruitProject.Models;
 
-namespace SleepyFruitProject.Controllers
-{
+namespace SleepyFruitProject.Controllers {
 	public class QuizController : Controller {
 		Random Random = new Random();
 
@@ -34,14 +33,11 @@ namespace SleepyFruitProject.Controllers
 			new Question(6, "https://i.makeagif.com/media/5-11-2015/6YJlfO.gif", "What is a grape?",new List<Answer>() {new Answer("Fruit", false), new Answer("Vegetable", false), new Answer ("Berry", false), new Answer("Smash", true) }),
 			new Question(7, "https://i.imgflip.com/83eua0.jpg", "What is the answer to this question?",new List<Answer>() {new Answer("What", false), new Answer("IDK", false), new Answer ("Found", false), new Answer("Sleepy", true) }),
 			new Question(8, "https://i.pinimg.com/originals/a5/5b/b1/a55bb1e92f75901273413b7549945d09.jpg", "What starts with e ends with e but only has one letter in it?",new List<Answer>() {new Answer("Enevelope", false), new Answer("E", true), new Answer ("Explore", false), new Answer("Exile", false) }),
-		private static List<Question> questions = new List<Question>() 
-		{ 
 			//Question 9-16 need to be made with the final 5 questions containing the "final answer" which will be imput on the final page
 			//the answers in order are 2, pineapple, declaration, pie, U
 			new Question(9, "https://www.thecoast.net.nz/media/9714550/life-the-universe.png?rmode=crop&rnd=132627101774130000&height=395&width=635&quality=95&scale=both", "What is the answer to life, the universe, and everything?",new List<Answer>() {new Answer("42", true), new Answer("24", false), new Answer("The question", false), new Answer("The answer", false) }),
 			new Question(10, "https://media2.giphy.com/media/l2JdTa0yVuHBpzIE8/200w.gif?cid=6c09b952h42dt7abhbyaoo40rixk6885hhlz64yfn8s4e8f3&ep=v1_gifs_search&rid=200w.gif&ct=g", "What is the best fruit?",new List<Answer>() {new Answer("Strawberry", false), new Answer("Lychee", false), new Answer("Dragonfruit", false), new Answer("Grape", true) }),
 			new Question(11, "https://media0.giphy.com/media/3o72F4nTnhd0fxsVhK/giphy.gif", "If a pineapple and a coconut had a dance-off, which fruit would be declared the champion of the tropical dance floor?",new List<Answer>() {new Answer("Watermelon", false), new Answer("Both! Yay Peace!", false), new Answer("The Child", true), new Answer("Avocado", false) }),
-
 			//Final 5 questions
 			new Question(12, "https://w7.pngwing.com/pngs/851/880/png-transparent-banana-word-image.png", "How many letters are there if you remove the 'b' an 'n'?",new List<Answer>() {new Answer("Enough?", false), new Answer("The peel", false), new Answer("2", true), new Answer("4", true) }),
 			new Question(13, "https://static.vecteezy.com/system/resources/previews/008/008/273/non_2x/abstract-red-strawberry-with-crown-logo-design-graphic-symbol-icon-illustration-creative-idea-vector.jpg", "Which fruits crown makes the other fruits jealous?",new List<Answer>() {new Answer("Pineapple", true), new Answer("Orange", false), new Answer("Pear", false), new Answer("Pomegranate", false) }),
@@ -49,8 +45,6 @@ namespace SleepyFruitProject.Controllers
 			new Question(15, "https://img.jagranjosh.com/images/2023/October/16102023/Find-the-missing-value-of-fruits.jpg", "You should know the answer.",new List<Answer>() {new Answer("3.14", false), new Answer("pie", true), new Answer("π", false), new Answer("fruitcake", false) }),
 			new Question(16, "https://madnews.wordpress.com/files/2008/01/soulja-boy.jpg", "Now watch me ________! Crank Dat...",new List<Answer>() {new Answer("U", true), new Answer("yo", false), new Answer("uhhhh", false), new Answer("Never heard that song.", false) })
 		};
-
-
 
         public UserDal dal;
 		private static int questionNum = 0;
@@ -72,55 +66,31 @@ namespace SleepyFruitProject.Controllers
 
         }
 
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-		public IActionResult QuestionPage(bool correct) {
-			questionSetup();
-
-			if (correct) {
-				questionNum++;
         [Authorize]
         [HttpGet]
-        public IActionResult QuestionPage()
-        {
+        public IActionResult QuestionPage() {
+			questionSetup();
             questionNum = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)).question;
             return View(questions[questionNum]);
         }
 
         [Authorize]
         [HttpPost]
-        public IActionResult QuestionPage(bool correct)
-        {
-            if (correct)
-            {
+        public IActionResult QuestionPage(bool correct) {
+            if (correct) {
                 questionNum++;
                 User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 temp.question = questionNum;
                 dal.UpdateUser(temp);
 
-                if (questionNum == questions.Count)
-                {
+                if (questionNum == questions.Count) {
                     return RedirectToAction("End_1", "Home");
                 }
 
 				return View(questions[questionNum]);
-			} else
-			{
+			} else {
 				return View(questions[questionNum]);
 			}
 		}
 	}
-}
-                return View(questions[questionNum]);
-            }
-            else
-            {
-                return View(questions[questionNum]);
-            }
-        }
-    }
 }
