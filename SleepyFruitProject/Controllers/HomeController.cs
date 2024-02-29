@@ -101,7 +101,10 @@ namespace SleepyFruitProject.Controllers
         }
 		public IActionResult FinishLine()
 		{
-            dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)).end_time = DateTime.Now;
+            User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            temp.end_time = DateTime.Now;
+            temp.BestTime = temp.ElapsedTime;
+            dal.UpdateUser(temp);
 			return View(dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)));
 		}
         public IActionResult GloatScreen()

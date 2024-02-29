@@ -24,27 +24,39 @@ namespace SleepyFruitProject.Models
 		public DateTime? start_time { get; set; }
 		public DateTime? end_time { get; set; }
 
-		public TimeSpan? ElapsedTime { get { return end_time - start_time; } set { } }
+		public TimeSpan? ElapsedTime
+		{
+			get
+			{ 
+				return end_time - start_time; 
+			}
+			set { }
+		}
 
+		private TimeSpan? TheBestTime { get; set; }
 		public TimeSpan? BestTime
 		{
-			get { return BestTime; }
+			get { return TheBestTime; }
 			set
 			{
-				if (value < BestTime)
+				if (TheBestTime == null)
 				{
-					BestTime = value;
+					TheBestTime = value;
+				}
+				if (value < TheBestTime)
+				{
+					TheBestTime = value;
 				}
 			}
 		}
 
-		public User(int userId, string userName, string email, TimeSpan elapsedTime)
-		{
-			this.ID = userId;
-			this.UserName = userName;
-			this.Email = email;
-			this.ElapsedTime = elapsedTime;
-		}
+		//public User(int userId, string userName, string email, TimeSpan elapsedTime)
+		//{
+		//	this.ID = userId;
+		//	this.UserName = userName;
+		//	this.Email = email;
+		//	this.ElapsedTime = elapsedTime;
+		//}
 
 		public User(string UserID, string UserName, string Email)
 		{

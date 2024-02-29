@@ -98,6 +98,8 @@ namespace SleepyFruitProject.Controllers
 
 				if (questionNum == questions.Count)
 				{
+					temp.question = 0;
+					dal.UpdateUser(temp);
 					return RedirectToAction("End_1", "Home");
 				}
 
