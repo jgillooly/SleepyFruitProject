@@ -25,6 +25,9 @@ namespace SleepyFruitProject.Models
 		protected static DateTime end_time { get; set; }
 		public TimeSpan ElapsedTime { get; set; } = end_time - start_time;
 
+		public int Lives = 3;
+		public int Skips = 0;
+
 		public User(int userId, string userName, string email, TimeSpan elapsedTime)
 		{
 			this.ID = userId;

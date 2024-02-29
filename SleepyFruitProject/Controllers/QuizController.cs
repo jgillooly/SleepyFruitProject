@@ -60,8 +60,7 @@ namespace SleepyFruitProject.Controllers {
 			questions[2].Answers[0].correct = (Random.Next(2) == 0);
 			questions[2].Answers[1].correct = !questions[2].Answers[0].correct;
 		}
-        public QuizController(UserDal indal)
-        {
+        public QuizController(UserDal indal) {
             dal = indal;
 
         }
@@ -89,6 +88,18 @@ namespace SleepyFruitProject.Controllers {
 
 				return View(questions[questionNum]);
 			} else {
+				User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+				temp.Lives -= 1;
+
+				if (temp.Lives <= 0) { 
+					temp.Lives = 3;
+					temp.Skips = 0;
+					questionNum = 0;
+					dal.UpdateUser(temp);
+					RedirectToAction("Index", "Home");
+				}
+
+				dal.UpdateUser(temp);
 				return View(questions[questionNum]);
 			}
 		}
