@@ -19,6 +19,11 @@ namespace SleepyFruitProject.Controllers
             dal = indal;
         }
 
+        public IActionResult Question1()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             if (!User.Identity.IsAuthenticated)
