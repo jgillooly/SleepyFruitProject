@@ -21,9 +21,22 @@ namespace SleepyFruitProject.Models
 
 		public int question { get; set; } = 0;
 
-		protected static DateTime start_time { get; set; }
-		protected static DateTime end_time { get; set; }
-		public TimeSpan ElapsedTime { get; set; } = end_time - start_time;
+		public DateTime? start_time { get; set; }
+		public DateTime? end_time { get; set; }
+
+		public TimeSpan? ElapsedTime { get { return end_time - start_time; } set { } }
+
+		public TimeSpan? BestTime
+		{
+			get { return BestTime; }
+			set
+			{
+				if (value < BestTime)
+				{
+					BestTime = value;
+				}
+			}
+		}
 
 		public User(int userId, string userName, string email, TimeSpan elapsedTime)
 		{
@@ -40,7 +53,7 @@ namespace SleepyFruitProject.Models
 			this.Email = Email;
 		}
 
-		public User() 
+		public User()
 		{
 		}
 	}
