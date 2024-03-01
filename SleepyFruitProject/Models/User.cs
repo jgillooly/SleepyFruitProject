@@ -24,11 +24,11 @@ namespace SleepyFruitProject.Models
 		public DateTime? start_time { get; set; }
 		public DateTime? end_time { get; set; }
 
-		public TimeSpan? ElapsedTime
+		public TimeSpan? ElapsedTime 
 		{
 			get
 			{ 
-				return end_time - start_time; 
+				return (end_time - start_time); 
 			}
 			set { }
 		}
