@@ -6,8 +6,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SleepyFruitProject.Data;
 using SleepyFruitProject.Models;
 
-namespace SleepyFruitProject.Controllers {
-	public class QuizController : Controller {
+namespace SleepyFruitProject.Controllers
+{
+	public class QuizController : Controller
+	{
 		Random Random = new Random();
 
 		private static List<Question> questions = new List<Question>() { 
@@ -104,35 +106,43 @@ namespace SleepyFruitProject.Controllers {
 
         };
 
-        public UserDal dal;
+		public UserDal dal;
 		private static int questionNum = 0;
 		private static int question22Count = 0;
 
-		public IActionResult Index() 
+		public IActionResult Index()
 		{
 			return View();
 		}
 
 		//method for setting up other questions
-		public void questionSetup() {
+		public void questionSetup()
+		{
 			//question2
 			questions[2].Answers[0].correct = (Random.Next(2) == 0);
 			questions[2].Answers[1].correct = !questions[2].Answers[0].correct;
 		}
+		public QuizController(UserDal indal)
+		{
+			dal = indal;
 
-        public QuizController(UserDal indal)
-        {
-            dal = indal;
+		}
 
-        }
-
-        [Authorize]
-        [HttpGet]
-        public IActionResult QuestionPage() {
+		[Authorize]
+		[HttpGet]
+		public IActionResult QuestionPage()
+		{
 			questionSetup();
-            questionNum = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)).question;
-            return View(questions[questionNum]);
-        }
+			questionNum = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)).question;
+			User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+			if (temp.start_time == null || temp.end_time != null)
+			{
+				temp.end_time = null;
+				temp.start_time = DateTime.Now;
+				dal.UpdateUser(temp);
+			}
+			return View(questions[questionNum]);
+		}
 
         [Authorize]
         [HttpPost]
@@ -182,9 +192,12 @@ namespace SleepyFruitProject.Controllers {
                 temp.question = questionNum;
                 dal.UpdateUser(temp);
 
-                if (questionNum >= questions.Count) {
-                    return RedirectToAction("End_1", "Home");
-                }
+				if (questionNum == questions.Count)
+				{
+					temp.question = 0;
+					dal.UpdateUser(temp);
+					return RedirectToAction("End_1", "Home");
+				}
 
 
 				return View(questions[questionNum]);
