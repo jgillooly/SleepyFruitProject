@@ -16,11 +16,11 @@ namespace SleepyFruitProject.Controllers
 			//--------------------Questions 1-5--------------------
 			new Question(1, "https://lasercraftum.com/cdn/shop/products/marty-the-zebra-madagascar-layered-design-for-cutting-246_1200x1200.jpg?v=1675266851", "Are Zebras black with white stripes or white with black stripes?",new List<Answer>() {new Answer("B&W", false), new Answer("W&B", false), new Answer ("Both", false), new Answer("Who Cares", true) }),
 			//First of the final questions on the last page
-			new Question(2, "https://w7.pngwing.com/pngs/851/880/png-transparent-banana-word-image.png", "How many letters are there if you remove the 'b' an 'n'?",new List<Answer>() {new Answer("Enough?", false), new Answer("The peel", false), new Answer("2", true), new Answer("4", true) }),
+			new Question(2, "https://w7.pngwing.com/pngs/851/880/png-transparent-banana-word-image.png", "How many letters are there if you remove the 'b' an 'n'? (important)",new List<Answer>() {new Answer("Enough?", false), new Answer("The peel", false), new Answer("2", true), new Answer("4", true) }),
 			new Question(3, "https://watermark.lovepik.com/photo/20211202/large/lovepik-businessman-ready-to-toss-a-coin-picture_501448831.jpg", "*coin flip* Call it...",new List<Answer>() {new Answer("Heads", false), new Answer("Tails", true), new Answer ("Neither", false), new Answer("Both", false) }),
 			new Question(4, "https://i.makeagif.com/media/5-07-2016/shULZy.gif", "Is the Lord of the Rings a good movie?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("Haven't seen it", true), new Answer("*bleugh*", false) }),
 			//Second of the final questions on the last page
-			new Question(5, "https://static.vecteezy.com/system/resources/previews/008/008/273/non_2x/abstract-red-strawberry-with-crown-logo-design-graphic-symbol-icon-illustration-creative-idea-vector.jpg", "Which fruits crown makes the other fruits jealous?",new List<Answer>() {new Answer("Pineapple", true), new Answer("Orange", false), new Answer("Pear", false), new Answer("Pomegranate", false) }),
+			new Question(5, "https://static.vecteezy.com/system/resources/previews/008/008/273/non_2x/abstract-red-strawberry-with-crown-logo-design-graphic-symbol-icon-illustration-creative-idea-vector.jpg", "Which fruits crown makes the other fruits jealous? (important)",new List<Answer>() {new Answer("Pineapple", true), new Answer("Orange", false), new Answer("Pear", false), new Answer("Pomegranate", false) }),
 			
 			//--------------------Questions 6-10--------------------
 			new Question(6, "https://i.makeagif.com/media/5-11-2015/6YJlfO.gif", "What is a grape?",new List<Answer>() {new Answer("Fruit", false), new Answer("Vegetable", false), new Answer ("Berry", false), new Answer("Smash", true) }),
@@ -45,7 +45,7 @@ namespace SleepyFruitProject.Controllers
 			
 			//--------------------Questions 21-25--------------------
 			//Third of the final questions on the last page
-			new Question(21, "https://media.defense.gov/2009/Jun/30/2000533726/2000/2000/0/040929-F-5102W-001.JPG", "The fruits want rights and they are following our ancestors!! Quick sign the right document!",new List<Answer>() {new Answer("fruit freedom", false), new Answer("declaration", true), new Answer("rights", false), new Answer("bills (ew)", false) }),
+			new Question(21, "https://media.defense.gov/2009/Jun/30/2000533726/2000/2000/0/040929-F-5102W-001.JPG", "The fruits want rights and they are following our ancestors!! Quick sign the right document! (important)",new List<Answer>() {new Answer("fruit freedom", false), new Answer("declaration", true), new Answer("rights", false), new Answer("bills (ew)", false) }),
 			new Question(22, "https://i.ytimg.com/vi/RI7QSfoC72s/maxresdefault.jpg", "Whats the best way to cook an ice cube?? Please help me with the steps!", new List<Answer>(){new Answer("Freeze water", true), new Answer("Set it out to defrost", false), new Answer("Heat up the pan", false), new Answer("Drop it in and simmer for 5 minutes", false)}),
 			new Question(23, "https://pbs.twimg.com/media/FTeathAUAAImBqd.jpg:large", "How many chickens would it take to conquer the world?", new List<Answer>(){new Answer("Exactly 42, the answer to everything", false), new Answer("None, the cows are already planning a coup.", false), new Answer("Not enough, the ducks are in cahoots with the squirrels.", false), new Answer("17 but only on Thursdays", true)}),
 			new Question(24, "https://www.burlingtoncountytimes.com/gcdn/authoring/2012/09/06/NBCO/ghows-PA-c5ed2d19-df2f-498c-afbb-feca02f7fe16-de4dc573.png?crop=759,429,x0,y114&width=759&height=429&format=pjpg&auto=webp", "If a tree falls in a forest and no one is around to hear it, does it still need a bandage?", new List<Answer>(){new Answer("Yes, and a hug too.", true), new Answer("No, but it could use some emotional support.", false), new Answer("It's a tree, not a drama queen", false), new Answer("Only if it's a talking tree", false)}),
@@ -78,33 +78,33 @@ namespace SleepyFruitProject.Controllers
 			new Question(31, "https://i.makeagif.com/media/2-06-2022/f5-kPt.gif", "Have you showered today?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("I'm a Neumont Student", true), new Answer("*sniff sniff*", false) }),
 			new Question(32, "https://spiritedrose.files.wordpress.com/2018/02/cow-holding-up-milk1.jpg?w=470&h=358", "Can you milk a cow by simply asking nicely?", new List<Answer>(){new Answer("MILK MILK LEMONADE!", false), new Answer("Just grab and squeeze", false), new Answer("\"MOOO MO MOOOO\"", true), new Answer("It works on your mom.", false)}),
 			//Fourth of the final questions on the last page
-			new Question(33, "https://img.jagranjosh.com/images/2023/October/16102023/Find-the-missing-value-of-fruits.jpg", "You should know the answer.",new List<Answer>() {new Answer("3.14", false), new Answer("pie", true), new Answer("π", false), new Answer("fruitcake", false) }),
+			new Question(33, "https://img.jagranjosh.com/images/2023/October/16102023/Find-the-missing-value-of-fruits.jpg", "You should know the answer. (important)",new List<Answer>() {new Answer("3.14", false), new Answer("pie", true), new Answer("π", false), new Answer("fruitcake", false) }),
+			new Question(34, "https://previews.123rf.com/images/mickisfotowelt/mickisfotowelt1909/mickisfotowelt190900098/130754332-an-apple-tree-standing-in-an-orchard-beside-a-pear-tree.jpg", "What did the apple tree say to the pear tree?",new List<Answer>() {new Answer("Youre pear-fect", false), new Answer("Lets stick together", false), new Answer ("We should branch out", false), new Answer("Fruit tree alliance formed", true) }),
+			new Question(35, "https://www.inspiredtaste.net/wp-content/uploads/2020/11/Easy-Roasted-Potatoes-Recipe-1-1200.jpg", "A 100-gram potato is 99% water. If it dries to become 98% water how many grams will it be?",new List<Answer>() {new Answer("1% less grams", false), new Answer("Half the weight", true), new Answer ("Now it's not a potato T-T", false), new Answer("Why must math", false) }),
+
+			//--------------------Questions 36-40--------------------
+			new Question(36, "https://media.wired.co.uk/photos/606d9d4b89f3babb1f01326a/1:1/w_2000,h_2000,c_limit/wired-tomato.jpg", "Why did the tomato turn red?",new List<Answer>() {new Answer("Because they're always angry", true), new Answer("Ketchup practice", false), new Answer ("Ripe rebellion manifestation", false), new Answer("Embarrased, as it should be", false) }),
+			new Question(37, "https://www.mashed.com/img/gallery/how-the-tomato-became-the-ultimate-protest-food/intro-1674230039.jpg", "What's my opinion on tomatoes?",new List<Answer>() {new Answer("They are wonderful creations!", false), new Answer("Why would that be clear?", false), new Answer ("They are the devils fruit.", true), new Answer("Completely neutral, probably.", false) }),
+			new Question(38, "https://i.ytimg.com/vi/uUB4lHBgPlQ/maxresdefault.jpg", "Why do grapefruits hate grapes?",new List<Answer>() {new Answer("Because grapes are better", false), new Answer("Grapes > Grapefruit", false), new Answer ("Jealous and fat, tsk tsk", false), new Answer("Stupid grapefruit", true) }),
+			new Question(39, "https://tastylicious.com/wp-content/uploads/2020/09/Squeezing-orange-juice.jpg", "How did the orange juice it's way into the glass?",new List<Answer>() {new Answer("OH GOD WHY!", true), new Answer("HE DIED SO HORRIBLY!!", false), new Answer ("THE BLOOD GOOD GOD!!", false), new Answer("HE DIDN'T DESERVE IT!!", false) }),
 			//Fifth of the final questions on the last page
-			new Question(34, "https://madnews.wordpress.com/files/2008/01/soulja-boy.jpg", "Now watch me ________! Crank Dat...",new List<Answer>() {new Answer("U", true), new Answer("yo", false), new Answer("uhhhh", false), new Answer("Never heard that song.", false) }),
-			//new Question(35, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
+			new Question(40, "https://madnews.wordpress.com/files/2008/01/soulja-boy.jpg", "Now watch me ________! Crank Dat... (important)",new List<Answer>() {new Answer("U", true), new Answer("yo", false), new Answer("uhhhh", false), new Answer("Never heard that song.", false) }),
 
-			////--------------------Questions 36-40--------------------
-			//new Question(36, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(37, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(38, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(39, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(40, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
+			//--------------------Questions 41-45--------------------
+			new Question(41, "https://www.home-designing.com/wp-content/uploads/2016/12/white-simple-bookcase-wedged-nook-corner.jpg", "Can a book become a best friend or am I just lonely?",new List<Answer>() {new Answer("Nah you're normal", false), new Answer("HAHA lonely", true), new Answer ("I like books too!", false), new Answer("pft who reads??", false) }),
+			new Question(42, "https://ih1.redbubble.net/image.4775811750.7443/mp,504x498,matte,f8f8f8,t-pad,600x600,f8f8f8.u1.jpg", "The pencil won the race, who was the other competitor?",new List<Answer>() {new Answer("A cheetah", true), new Answer("A pen", false), new Answer ("A grape", false), new Answer("A marker", false) }),
+			new Question(43, "https://image.spreadshirtmedia.com/image-server/v1/products/T1459A839PA3861PT28D1040535398W6834H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2,modelId=4286,crop=list/1st-place-medal-first-place-medal-gold-medal-gift-sticker.jpg", "Weird. What was the competition??",new List<Answer>() {new Answer("Running", false), new Answer("Killing", true), new Answer ("Swimming", false), new Answer("Drawing", false) }),
+			new Question(44, "https://images3.memedroid.com/images/UPLOADED945/612038db7d9a9.jpeg", "John Wick was holding the pencil sorry. Take a freebie or two.",new List<Answer>() {new Answer("Kick the dog?", false), new Answer("Turn around, go home.", true), new Answer ("Take a car?", false), new Answer("Offer condolences.", true) }),
+			new Question(45, "https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/06/Gravity_2880x1620_Lede.jpg", "Which way does gravity go?",new List<Answer>() {new Answer("UP", true), new Answer("DOWN", false), new Answer ("LEFT", false), new Answer("RIGHT", false) }),
 
-			////--------------------Questions 41-45--------------------
-			//new Question(41, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(42, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(43, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(44, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(45, "", "Which way does gravity go?",new List<Answer>() {new Answer("UP", true), new Answer("DOWN", false), new Answer ("LEFT", false), new Answer("RIGHT", false) }),
+			//--------------------Questions 46-50--------------------
+			new Question(46, "https://static.thenounproject.com/png/1166585-200.png", "Why did the clock go to counseling?",new List<Answer>() {new Answer("Time management crisis", false), new Answer("Alarm anxiety disorder", false), new Answer ("Hour hand length", true), new Answer("It's only ever right twice", false) }),
+			new Question(47, "https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2024/01/Rolling-out-Area-Rug.jpg", "Why did the rug feel underappreciated?",new List<Answer>() {new Answer("It's beneath us", false), new Answer("Laid down but never picked up", false), new Answer ("Uhh it's a rug?", true), new Answer("Always stepped on", false) }),
+			new Question(48, "https://lwm-a1.freetls.fastly.net/uploads/2018/03/broken-mirror-1080x900.jpeg", "Can a mirror reflect on itself if it's mirror enough?",new List<Answer>() {new Answer("Self reflection is always good", false), new Answer("Not while you look at it", false), new Answer ("Just shatter it", true), new Answer("With the help of another mirror", false) }),
+			new Question(49, "https://i.ytimg.com/vi/EsS2QUeSlXI/maxresdefault.jpg", "How do you put an elephant in the fridge?",new List<Answer>() {new Answer("Open the door, put it in, close the door.", false), new Answer("carefully", true), new Answer ("one bite at a time", false), new Answer("You don't.", false) }),
+			new Question(50, "https://blog.winecollective.ca/wp-content/uploads/2013/06/grape-stomping01.jpg", "What did the grape do when stepped on?",new List<Answer>() {new Answer("screamed", false), new Answer("wined", false), new Answer ("squish", false), new Answer("smash", true) }),
 
-			////--------------------Questions 46-50--------------------
-			//new Question(46, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(47, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(48, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(49, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-			//new Question(50, "", "",new List<Answer>() {new Answer("", false), new Answer("", false), new Answer ("", false), new Answer("", false) }),
-
-        };
+		};
 
 		public UserDal dal;
 		private static int questionNum = 0;
