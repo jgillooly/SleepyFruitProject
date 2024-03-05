@@ -37,7 +37,7 @@ namespace SleepyFruitProject.Controllers
 
         public IActionResult Index()
         {
-            GenerateQuote();
+            Getandwait();
 
             ViewBag.Quote = Quote;
             ViewBag.Author = Author;
@@ -140,7 +140,7 @@ namespace SleepyFruitProject.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        private async void GenerateQuote()
+        private async Task<int> GenerateQuote()
         {
             HttpClient client = new()
             {
@@ -163,6 +163,15 @@ namespace SleepyFruitProject.Controllers
 
             ViewBag.Quote = Quote;
             ViewBag.Author = Author;
+            return 1;
+
+        }
+
+        private void Getandwait()
+        {
+            var task = GenerateQuote();
+            task.Wait(); // Blocks current thread until GetFooAsync task completes
+                         // For pedagogical use only: in general, don't do this!
 
         }
     }
