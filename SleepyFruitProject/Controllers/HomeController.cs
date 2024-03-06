@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System;
 
 namespace SleepyFruitProject.Controllers
 {
@@ -123,11 +124,15 @@ namespace SleepyFruitProject.Controllers
             temp.end_time = DateTime.Now;
             temp.BestTime = temp.ElapsedTime;
             dal.UpdateUser(temp);
-            return View(dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+
+            ViewBag.ElapsedTime = temp.ElapsedTime.Value.Days.ToString() + ":" + temp.ElapsedTime.Value.Hours.ToString() + ":" + temp.ElapsedTime.Value.Minutes + ":" + temp.ElapsedTime.Value.Seconds.ToString() + "." + MathF.PI;
+			ViewBag.BestTime = temp.BestTime.Value.Days.ToString() + ":" + temp.BestTime.Value.Hours.ToString() + ":" + temp.BestTime.Value.Minutes + ":" + temp.BestTime.Value.Seconds.ToString() + "." + MathF.PI;
+
+			return View(dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)));
         }
         public IActionResult GloatScreen()
-        {
-            return View();
+		{
+          return View();
         }
         public IActionResult yay()
         {
