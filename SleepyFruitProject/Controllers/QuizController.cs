@@ -18,7 +18,7 @@ namespace SleepyFruitProject.Controllers
 			//First of the final questions on the last page
 			new Question(2, "https://w7.pngwing.com/pngs/851/880/png-transparent-banana-word-image.png", "How many letters are there if you remove the 'b' an 'n'? (important)",new List<Answer>() {new Answer("Enough?", false), new Answer("The peel", false), new Answer("2", true), new Answer("4", true) }),
 			new Question(3, "https://watermark.lovepik.com/photo/20211202/large/lovepik-businessman-ready-to-toss-a-coin-picture_501448831.jpg", "*coin flip* Call it...",new List<Answer>() {new Answer("Heads", false), new Answer("Tails", true), new Answer ("Neither", false), new Answer("Both", false) }),
-			new Question(4, "https://i.makeagif.com/media/5-07-2016/shULZy.gif", "Is the Lord of the Rings a good movie?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("Haven't seen it", true), new Answer("*bleugh*", false) }),
+			new Question(4, "https://i.makeagif.com/media/5-07-2016/shULZy.gif", "Is the Lord of the Rings a good movie?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("It's trash", true), new Answer("*bleugh*", false) }),
 			//Second of the final questions on the last page
 			new Question(5, "https://static.vecteezy.com/system/resources/previews/008/008/273/non_2x/abstract-red-strawberry-with-crown-logo-design-graphic-symbol-icon-illustration-creative-idea-vector.jpg", "Which fruits crown makes the other fruits jealous? (important)",new List<Answer>() {new Answer("Pineapple", true), new Answer("Orange", false), new Answer("Pear", false), new Answer("Pomegranate", false) }),
 			
@@ -109,6 +109,8 @@ namespace SleepyFruitProject.Controllers
 		public UserDal dal;
 		private static int questionNum = 0;
 		private static int question22Count = 0;
+		private static int lives = 3;
+		private static int skips = 0;
 
 		public IActionResult Index()
 		{
@@ -125,8 +127,11 @@ namespace SleepyFruitProject.Controllers
 		public QuizController(UserDal indal)
 		{
 			dal = indal;
-
-		}
+            foreach (var item in questions) 
+            {
+				item.lives = lives;
+            }
+        }
 
 		[Authorize]
 		[HttpGet]
@@ -207,6 +212,24 @@ namespace SleepyFruitProject.Controllers
 				questions[21].Answers[1].correct = false;
 				questions[21].Answers[2].correct = false;
 				questions[21].Answers[3].correct = false;
+
+				lives--;
+
+				if (lives <= 0) { 
+					lives = 3;
+					skips = 0;
+					questionNum = 0;
+					foreach (var item in questions)
+					{
+						item.lives = lives;
+					}
+					RedirectToAction("Index", "Home");
+				}
+
+				foreach (var item in questions)
+				{
+					item.lives = lives;
+				}
 
 				return View(questions[questionNum]);
 			}

@@ -9,6 +9,8 @@
 		public List<Answer> Answers { get; set; }
 
 		public string img { get; set; }
+		public int lives { get; set; }
+		public int skips { get; set; }
 
 		public Question() { }
 
