@@ -23,6 +23,7 @@
 							@Model.Answers[0].TheAnswer
 						</button>
 						<input class="form-check-input" name="correct" value="@Model.Answers[0].correct.ToString()" type="hidden" />
+						<input class="form-check-input" name="trickcorrect" value="false" type="hidden" />
 					</form>
 				</div>
 				<div class="col-3">
@@ -31,6 +32,7 @@
 							@Model.Answers[1].TheAnswer
 						</button>
 						<input class="form-check-input" name="correct" value="@Model.Answers[1].correct.ToString()" type="hidden" />
+						<input class="form-check-input" name="trickcorrect" value="false" type="hidden" />
 					</form>
 				</div>
 			</div>
@@ -42,6 +44,7 @@
 							@Model.Answers[2].TheAnswer
 						</button>
 						<input class="form-check-input" name="correct" value="@Model.Answers[2].correct.ToString()" type="hidden" />
+						<input class="form-check-input" name="trickcorrect" value="false" type="hidden" />
 					</form>
 				</div>
 				<div class="col-3">
@@ -50,11 +53,13 @@
 							@Model.Answers[3].TheAnswer
 						</button>
 						<input class="form-check-input" name="correct" value="@Model.Answers[3].correct.ToString()" type="hidden" />
+						<input class="form-check-input" name="trickcorrect" value="false" type="hidden" />
 					</form>
 				</div>
 			</div>
 		</div>
 		<div class="col-1" style="background-color: orange"></div>
+		<input class="form-check-input" name="trickcorrect" value="false" type="hidden" />
 	</div>
 </div>
 

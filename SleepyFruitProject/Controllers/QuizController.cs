@@ -31,7 +31,7 @@ namespace SleepyFruitProject.Controllers
 			
 			//--------------------Questions 11-15--------------------
 			new Question(11, "https://media0.giphy.com/media/3o72F4nTnhd0fxsVhK/giphy.gif", "If a pineapple and a coconut had a dance-off, which fruit would be declared the champion of the tropical dance floor?",new List<Answer>() {new Answer("Watermelon", false), new Answer("Both! Yay Peace!", false), new Answer("The Child", true), new Answer("Avocado", false) }),
-			new Question(12, "https://live.staticflickr.com/585/22679000473_e289f34836_b.jpg", "If the fruits of the world came together what color would they make?", new List<Answer>(){new Answer("yes", false), new Answer("mmm fruits", false), new Answer("fruit salad", true), new Answer("dirt colored", false)}),	
+			new Question(12, "https://live.staticflickr.com/585/22679000473_e289f34836_b.jpg", "If the fruits of the world came together what color would they make?", new List<Answer>(){new Answer("yes", false), new Answer("mmm fruits", false), new Answer("fruit salad", true), new Answer("dirt colored", false)}),
 			new Question(13, "https://static.vecteezy.com/system/resources/previews/003/482/498/original/cartoon-illustration-of-apple-pie-with-the-question-mark-vector.jpg", "Whats the best thing to put into a pie?", new List<Answer>(){new Answer("if theres a hole...", false), new Answer("your teeth", true), new Answer("fruit duh", false), new Answer("more pie", false)}),
 			new Question(14, "https://wl-brightside.cf.tsp.li/resize/728x/jpg/b28/a80/a0c97156bcbb3439309fcb14de.jpg", "What do you call a fake fruit?", new List<Answer>(){new Answer("BHE", false), new Answer("counter-fruit", false), new Answer("Imposter!", false), new Answer("a tomato.", true)}),
 			new Question(15, "https://wl-brightside.cf.tsp.li/resize/728x/jpg/1d9/e22/d289eb513bbcfabaf5d4cfd61b.jpg", "What do you call a real fruit?", new List<Answer>(){new Answer("fruits", false), new Answer("BHE", true), new Answer("Its name?", false), new Answer("stems", false)}),
@@ -57,22 +57,22 @@ namespace SleepyFruitProject.Controllers
 			new Question(28, "https://pbs.twimg.com/ext_tw_video_thumb/1509848705050214414/pu/img/8G7LskIMsk0yGKjb.jpg", "Why did the orange stop rolling?", new List<Answer>(){new Answer("It hit the brakes", false), new Answer("ORANGE", false), new Answer("Gravity reversed", true), new Answer("Got tired", false)}),
 			new Question(29, "https://i.pinimg.com/originals/80/f1/be/80f1be5d5deec8085f517dd9cb037dbd.jpg", "Can pineapples fly?", new List<Answer>(){new Answer("They just fall up", true), new Answer("Yes, if you throw hard enough", false), new Answer("Gravity decides", false), new Answer("They need wings first", false)}),
 			new Question(30, "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QEA8NDw8NDQ8NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUY" +
-                "HSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OFxAQFy0dFR0rLS0rLS0tKy0tLSsrLS0rLSstKystLS04LSsrKy0tLS0rKy0rKysrLS0tKz" +
-                "crLS0tLf/AABEIAK8BIQMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAABBAACAwUGB//EADYQAAICAQIDBQYFAgcAAAAAAAABAgMRBCEFEjETIlFhcQYy" +
-                "QYGRoQcUI1KxQmIkM2Nyc4LB/8QAGgEAAgMBAQAAAAAAAAAAAAAAAQMAAgQFBv/EACQRAQACAgICAgMBAQEAAAAAAAABAgMRITEEEiIyE0FhUSMF/9oADAMBAAIRAxEAP" +
-                "wD5eQgMG5nEmABAIYCQgdIgAlWSUTIcACiAjM2aGVhUYhnbZhCFjyzScsszYi9tnRCmCYNIosigscGsC2CJAQQBwDDDpEBkLRXAUWTGaZCyL1vdFbQtDt6WJtKJTh28Rm6OzfkYrT" +
-                "8tHx0yjXkPZ4F+Gt4l6jEkSZGFXIzlI05SkokRiyrRq4lcF4lVkwYNJIq0XhVngmAtEii2wmA5SGnKEgaZkDgmDpMYEIQibQAURoKAEAQIGCBBkCIK6qWBnInrCtulq9lirCiIzSctFBwTI" +
-                "SIAUQvGBETAeUvGJflGRAbYqJOQY5A9mHQbKuBRDcoGEkVmFol3OCbprwH9TDuP0EvZvfmXodXXxxXL0Zy8ttZdNVI+LkcKjtL1HJQK8Hr/AE8+LY46wWvyvFSTgVcBx1AlWyRZJqQcSjiOSqMbI" +
-                "DKypMFpIo0bSRSSGbVmGEiRLNEUS0SqIC/KQntA6lkDJMgOqwITBA5AiIjIgNhCEAQIBAhCZJpFWKawbYpqyl+lq9lkHlIkWMxwYLJACgIKRpEoi6LQjRG0ImUUN1RHVVlXlA4jKggOCG+qmyjiL2IdsiLTQq8aXh2fZGOZzXhFP7nd4zVimb8jmewFPNfZH/TT+56b2s06hpbPWK+55/yb68mKujirvHtwuB0PsY+eX9x78sO8E0v6FS/tyOPTGbLm+cnUx8ON+XJLT+R13pysqSv5pM/G4VumErqT0N1ZzNRE04sszJ" +
-                "V6OLOJnKOw3bExUdmbq22yzBRoMUWaAv8A0uprkz2ARzsH4ogj8kH+rgACQ7rkoiEIREIEIUDBUuVIkBIqWYEBAYnqxwX1cdil+l69liACZTUDEAUgoujRGaZFMMAYgO1dDmwmdnR1Zjk0YuVLM+cDlnYtqmoC0NXHI2ZiO1Gz08uuGKWwwdaOri4+py9S89CuSsa3C1Zl6r8Mqs32vwgv5PR+3u2lfnOC+4j+GtMK6rLpuEXNrDbSeBr8Q5p0VRTT574JY6YPJeRPt5rt4Y1hO8JqxRV/xx/g3nA00kcQgvCEV9i0kYbW+Un1jiC" +
-                "riZWRG5RMZoMSOnOvicrUxOxqDlak1YeysnTk3IxS7svQZtMLF3X8jpUY7Emg1rdeqI0XqW69UP8A0VHb0n5Ygxv4shz9tenglJEyJKx5G4npIttxpjS4JEaIkXgERZAIEBZUICAhCEwDQsbbcC9t2UHWCuRF7T0bWFwZA2FISuOQqZUKQUdK3hNsdOtW+Xs5SUdpLmT80c5Fu0ljly+XrjO2SoZlFodTt0anEEvI4kFuOJ7DMV/XlW0BrrclOF1QsthXZZ2UJSSlZjPKvQrYskorWVkt7btuQ1qHd47odPQ1Ci13eMvgchs6eoug64willdWcyaGZdfpWv8AW7tsUEueS" +
-                "iuiTwkM1cSstjRRKTkoXKSy8vqJ3z/TN+D6OXa6dvZWWRcfRMweTip6+2uWvDe2++H12vovRAYV0KOR5H9uvXoJowsNJzMbJl4GZJ6g5OpOrqJHJ1DNeHsnJPDm2mNvus2tF7XsdKjJYqaUrdeqKG+lXej/ALkNnqS69vVchDTtPIhzdtnD5dZHcagLV94aienpDi2WIQAxUUFgCGA2ACwCAiAEBBLayGVkQbOtOOUzlWww2Z8scm0lC5VBQgwSIiCEEYIoIYkRaGwxCRhFDdWlm1lJ4GUgJR153KqIzCDWzTRny5GTVXaQBOJvCllLFgMxOkL1VubjWus5JL6nttXo+y1PDqUv" +
-                "crTl65ON7HaDttVB4zGt87+R6bi+/FKF+2nP8nI83N/0jH/Jlu8enx29G2ZzYZMymzz0OltSUjKyQZMxsYyIV2wvZy9S+p0Lmc281YYKvPBG0ws6G9phYdGjLYuMaKLc4pfuQux3hK/Vh6l7/WVadvUYATmIc3lrfNaoYLkCj1UOHKwGQjLQAhRUKCA5BkJME0iAYQMiAL6qvbIwRopaNwtWdS5LQYsa1FaSyKpGa1dHRO1iEIVEYlihMhiUbVdTow1klHljt5nMizatsbS2lZMTum9m8l9Osv1BGGR7TVYwx9a7kuZ0Y5EoicaHZZGqKzKclGK82NWT2FNHqez1Onn+26GfTOC3kW9aTMJjjc" +
-                "8vpHszwL8pB8zTsn7zXReRyrZJ8Vbf9NCW/jg9enlZ8dzm36Orndjiud7OXxPER5M2y2vfueHdikVrEQE7V4ows1EfFElVX4Ixm6l8Yr6C4rC0ypPVQ8TCeqXhJ/I0dtXjD7GNuqrX9Ufk0OrX+BstfqdujEJ3Z+A1qNXB/FHOt1MTbioTeWc3lmVrI9Qs4KzZqrGmeZZ4HeE/5kfmI5HuErvp+Qcn1lKdvQ8xDPmIc/bW8CEqix6mHDFMJVFkXBApESDgiAQhGFEJgAQIGCrZcq0RC+p6CjQ5qegu47CLwZWWLkEE47kQnS6xCIiZIFpBHS0tNbXeYhAa09bk1FfEdj7Vl0HKuPTcvVqk9iuo4e4e81" +
-                "0zgxUUuhsjgmYaWz6nNTcrEo5bUk0lu8pnQlTNwnNRbjBZk/BHZ/DPTxnddZJKXLGPLlJ4bZz/ADs9a0mWjBTdofQNHY3VW3nLhHOevQ8nw+UtRqtTCU5qNcu6k+m57G3ozxvsnvdq5+NmPueUwamMlnXtuNQ6dnCYfum/+xk+GVeDfq2dWwwkUjJb/R050uGVfs+7MZ8PqX9C+rOnIWtGVyW/0JhzbNPBdIr6Cl0I+C+h0LxC82YrTJViUorwX0MZm8uphYbKs9mLOhwhd5+hz2jo8J95+gcn1SnbqkK5IYtNbw5ZALI9NDhoFEIXVEsULIKAQgSIGCMIGRAIyEIhfUmJtqOqMpCLmVPz00PyXa8vfWq5eb+z" +
-                "k6fU5CO3O2P5Fwz3nepJeRxEJkwSIAE9wRAmamPaaTTyuohSOUsfi4UsdnNvq2zKUt16hyY2D8lvjwXHb3L4YpaRQj3XdHDZ0fZPglekjLlbcp45mxPhOthZVTGMk2o4kvimeg0u2TxnlZcnyrP7dnFWNQ21Mu7L0f8AB5H2NW2ol43M9TrJYhN+EJP7HmPYtfo2P910mKwcYrm2+0O/IxmayM5MVC0sZitrGbugtaNqrJO5iN45eI2s24YJuVfUXte7GJ9RaZtqRLNs6PClu35HNZ0uF9GHJ0lO3QyQqQytDxyIRBwekcaVkQiC0WhUAoiQcBRUhCEQAkSIRBITJSdiRNjovqfeRhZLAbrcvJk9zNe0G1gXNtYy" +
-                "8dcfAqwpEaFSuqjSCKYNa0SElrUh2mAvTEci1g044LtK/NhC0zeKyC6Gw23SsFqdTOuSnCTi087M9Vwr24axC+OcYXPHq/U8hMxwcryPEx5ftDVjzWq+sz4zRdTY4WRb7OW2VlbeBz/Y1f4fPjZP+T5uptdG1nrhjuh45qKFy1zxHOeVrKMNv/OmuOa0ntpjyYmeX1aTMZM8Np/bO1e/GMvNbM7eg9pabcRy4SfwfT6mC3h5aczB8Zqy7NgtYa9plZRjaxUQvMkrzn3MevkIWs34oIv2wfUXsGcbv0FrDXUmWJ1OGe6/U5mDp8Ofc+bBfpKdmiFchM5zyZAkaPSOOsiMCIGEHJOYBA7BAZDkWsvwCZ0OttpTwYz1KQt" +
-                "OxsoJtlMijeWpZlK1soDAqbzK8V0JCBKChABDCChmqAqjaNmC8AbzgnOKu0z7Rl/fQadWuzBW685vbMDtYZyB6mJzMnIzUi6gLnkVWyrRr2YOQErbZotCRGiFfXYxLvcJ49OruzzOG2z3a9D01HEK7Y5g8+XxR89ya6bUyrfNFtMx5vDredx2dTPMcS9xcxGbKaLiCtjvtLG6+AZszRjms6k6bRPKucZ9BebNpC7HVLlRnS0DxD5s5rOjpPc+bJk6Wp2Y5yGZDOc//9k=", "What's 9 + 10?",new List<Answer>() {new Answer("19", true), new Answer("21", false), new Answer ("You Stupid", false), new Answer("I don't like this game", false) }),
+				"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", "What's 9 + 10?",new List<Answer>() {new Answer("19", true), new Answer("21", false), new Answer ("You Stupid", false), new Answer("I don't like this game", false) }),
 			
 			//--------------------Questions 31-35--------------------
 			new Question(31, "https://i.makeagif.com/media/2-06-2022/f5-kPt.gif", "Have you showered today?",new List<Answer>() {new Answer("Yes", false), new Answer("No", false), new Answer ("I'm a Neumont Student", true), new Answer("*sniff sniff*", false) }),
@@ -127,11 +127,11 @@ namespace SleepyFruitProject.Controllers
 		public QuizController(UserDal indal)
 		{
 			dal = indal;
-            foreach (var item in questions) 
-            {
+			foreach (var item in questions)
+			{
 				item.lives = lives;
-            }
-        }
+			}
+		}
 
 		[Authorize]
 		[HttpGet]
@@ -149,53 +149,45 @@ namespace SleepyFruitProject.Controllers
 			return View(questions[questionNum]);
 		}
 
-        [Authorize]
-        [HttpPost]
-        public IActionResult QuestionPage(bool correct) {
-			//if the question number is at 18 then the user will have to wait 10 seconds before the next question pops up
-			//reload the page after they hit 18
-
-            if (questionNum == 17)
-            {
-				Thread.Sleep(10000);
-				questionNum = 18;
-                return View(questions[questionNum]);
-            }
-			
-            if (correct) {
-				if(questionNum == 21)
+		[Authorize]
+		[HttpPost]
+		public IActionResult QuestionPage(bool correct)
+		{
+			if (correct)
+			{
+				if (questionNum == 21)
 				{
 					question22Count++;
-					if(question22Count == 1)
+					if (question22Count == 1)
 					{
 						questions[21].Answers[0].correct = false;
 						questions[21].Answers[1].correct = false;
 						questions[21].Answers[2].correct = true;
 						questions[21].Answers[3].correct = false;
-                        return View(questions[questionNum]);
-                    }
-                    else if(question22Count == 2)
+						return View(questions[questionNum]);
+					}
+					else if (question22Count == 2)
 					{
 						questions[21].Answers[0].correct = false;
 						questions[21].Answers[1].correct = true;
 						questions[21].Answers[2].correct = false;
 						questions[21].Answers[3].correct = false;
-                        return View(questions[questionNum]);
+						return View(questions[questionNum]);
 
-                    }
-                    else if(question22Count == 3)
+					}
+					else if (question22Count == 3)
 					{
 						questions[21].Answers[0].correct = false;
 						questions[21].Answers[1].correct = false;
 						questions[21].Answers[2].correct = false;
 						questions[21].Answers[3].correct = true;
-                        return View(questions[questionNum]);
-                    }
+						return View(questions[questionNum]);
+					}
 				}
-                questionNum++;
-                User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                temp.question = questionNum;
-                dal.UpdateUser(temp);
+				questionNum++;
+				User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+				temp.question = questionNum;
+				dal.UpdateUser(temp);
 
 				if (questionNum == questions.Count)
 				{
@@ -203,11 +195,20 @@ namespace SleepyFruitProject.Controllers
 					dal.UpdateUser(temp);
 					return RedirectToAction("End_1", "Home");
 				}
+			}
+			else
+			{
+				//if the question number is at 18 then the user will have to wait 10 seconds before the next question pops up
+				//reload the page after they hit 18
+				if (questionNum == 17)
+				{
+					Thread.Sleep(10000);
+					questionNum = 18;
+					return View(questions[questionNum]);
+				}
 
-
-				return View(questions[questionNum]);
-			} else {
-				if (questionNum == 43) {
+				if (questionNum == 43)
+				{
 					lives = 0;
 				}
 
@@ -219,15 +220,19 @@ namespace SleepyFruitProject.Controllers
 
 				lives--;
 
-				if (lives <= 0) { 
+				if (lives <= 0)
+				{
 					lives = 3;
 					skips = 0;
 					questionNum = 0;
+					User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+					temp.question = questionNum;
+					dal.UpdateUser(temp);
 					foreach (var item in questions)
 					{
 						item.lives = lives;
 					}
-					RedirectToAction("Index", "Home");
+					return RedirectToAction("Index", "Home");
 				}
 
 				foreach (var item in questions)
@@ -235,8 +240,8 @@ namespace SleepyFruitProject.Controllers
 					item.lives = lives;
 				}
 
-				return View(questions[questionNum]);
 			}
+			return View(questions[questionNum]);
 		}
 	}
 }
