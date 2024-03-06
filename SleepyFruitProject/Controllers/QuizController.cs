@@ -207,6 +207,10 @@ namespace SleepyFruitProject.Controllers
 
 				return View(questions[questionNum]);
 			} else {
+				if (questionNum == 43) {
+					lives = 0;
+				}
+
 				question22Count = 0;
 				questions[21].Answers[0].correct = true;
 				questions[21].Answers[1].correct = false;
