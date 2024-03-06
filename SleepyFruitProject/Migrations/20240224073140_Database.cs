@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SleepyFruitProject.Migrations
 {
-    public partial class Creation2 : Migration
+    public partial class Database : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -56,7 +56,9 @@ namespace SleepyFruitProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserID = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    question = table.Column<int>(type: "int", nullable: false),
+                    ElapsedTime = table.Column<TimeSpan>(type: "time", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -12,8 +12,8 @@ using SleepyFruitProject.Data;
 namespace SleepyFruitProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240223025259_Creation 2")]
-    partial class Creation2
+    [Migration("20240224073140_Database")]
+    partial class Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -230,6 +230,9 @@ namespace SleepyFruitProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<TimeSpan>("ElapsedTime")
+                        .HasColumnType("time");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -240,6 +243,9 @@ namespace SleepyFruitProject.Migrations
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("question")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
