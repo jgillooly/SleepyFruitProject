@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <div id="hoverText">If only there was a way to /finish the test</div>
     <script type="text/javascript">
         function openPopup() {
             window.open('https://c.tenor.com/sLLmD-W4uBAAAAAC/sike-tyler-the-creator.gif', '_blank', 'width=600,height=400');
@@ -9,5 +10,19 @@
 </head>
 <body>
     <button onclick="openPopup()">Your Reward Awaits!</button>
+    <button id="hoverButton" type="button"><img src="https://3.bp.blogspot.com/-CaNpYb5edu4/T_6U8MJk82I/AAAAAAAAArQ/ilxiAbxjSLU/s1600/fireworks3.gif" /></button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hoverButton").hover(function (e) {
+                $("#hoverText").css({
+                    left: e.pageX + 10,
+                    top: e.pageY + 10
+                }).fadeIn();
+            }, function () {
+                $("#hoverText").fadeOut();
+            });
+        });
+    </script>
 </body>
 </html>
