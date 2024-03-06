@@ -3,11 +3,16 @@
 <div class="text-center">
 	<div class="row">
 		<div class="col-1" style="background-color: orange"></div>
-		<div class="col-2">
-			<h1>Lives: @Model.lives</h1>
-		</div>
 		<div class="col-10">
-			<h1>Question @Model.num</h1>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-8">
+					<h1>Question @Model.num</h1>
+				</div>
+				<div class="col-2">
+					<h1>Lives: @Model.lives</h1>
+				</div>
+			</div>
 			<img src="@Model.img" height="300" />
 			<h2>@Model.TheQuestion</h2>
 			<div class="row m-5">

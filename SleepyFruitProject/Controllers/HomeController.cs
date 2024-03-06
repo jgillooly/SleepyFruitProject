@@ -71,19 +71,19 @@ namespace SleepyFruitProject.Controllers
             {
                 ModelState.AddModelError("Answer1", "What do you take me for an idiot?");
             }
-            if (!fg.Answer2.Equals("Pineapple", StringComparison.OrdinalIgnoreCase))
+            if (!(string.IsNullOrEmpty(fg.Answer2)) && !fg.Answer2.Equals("Pineapple", StringComparison.OrdinalIgnoreCase))
             {
                 ModelState.AddModelError("Answer2", "Your time thanks you for the gains");
             }
-            if (!fg.Answer3.Equals("declaration"))
+            if (!(string.IsNullOrEmpty(fg.Answer3)) && !fg.Answer3.Equals("declaration"))
             {
                 ModelState.AddModelError("Answer3", "I can't belive you didn't get this 1");
             }
-            if (!fg.Answer4.Equals("pie", StringComparison.OrdinalIgnoreCase))
+            if (!(string.IsNullOrEmpty(fg.Answer4)) && !fg.Answer4.Equals("pie", StringComparison.OrdinalIgnoreCase))
             {
                 ModelState.AddModelError("Answer4", "You deserve a worse time >:)");
             }
-            if (!fg.Answer5.Equals("U"))
+            if (!(string.IsNullOrEmpty(fg.Answer5)) && !fg.Answer5.Equals("U"))
             {
                 ModelState.AddModelError("Answer5", "C'mon the quiz isn't impossible!");
             }
