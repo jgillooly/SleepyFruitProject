@@ -125,8 +125,8 @@ namespace SleepyFruitProject.Controllers
             temp.BestTime = temp.ElapsedTime;
             dal.UpdateUser(temp);
 
-            ViewBag.ElapsedTime = temp.ElapsedTime.Value.Days.ToString() + ":" + temp.ElapsedTime.Value.Hours.ToString() + ":" + temp.ElapsedTime.Value.Minutes + ":" + temp.ElapsedTime.Value.Seconds.ToString() + "." + MathF.PI;
-			ViewBag.BestTime = temp.BestTime.Value.Days.ToString() + ":" + temp.BestTime.Value.Hours.ToString() + ":" + temp.BestTime.Value.Minutes + ":" + temp.BestTime.Value.Seconds.ToString() + "." + MathF.PI;
+            ViewBag.ElapsedTime = temp.ElapsedTime.Value.Days.ToString() + ":" + temp.ElapsedTime.Value.Hours.ToString() + ":" + temp.ElapsedTime.Value.Minutes + ":" + temp.ElapsedTime.Value.Seconds.ToString() + "." + MathF.PI.ToString().Substring(2);
+			ViewBag.BestTime = temp.BestTime.Value.Days.ToString() + ":" + temp.BestTime.Value.Hours.ToString() + ":" + temp.BestTime.Value.Minutes + ":" + temp.BestTime.Value.Seconds.ToString() + "." + MathF.PI.ToString().Substring(2);
 
 			return View(dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)));
         }
