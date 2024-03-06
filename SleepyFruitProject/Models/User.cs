@@ -49,8 +49,6 @@ namespace SleepyFruitProject.Models
 				}
 			}
 		}
-		public int Lives = 3;
-		public int Skips = 0;
 
 		//public User(int userId, string userName, string email, TimeSpan elapsedTime)
 		//{
