@@ -1,10 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div>
-    <h1>"You did it! Feel satisfied?"</h1>
-    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">NO</a>
+﻿@model User
+
+<div class="text-center">
+	<h1>"You did it! Feel satisfied?"</h1>
+	@if (Model.start_time != null)
+	{
+		<hr />
+		<br />
+		<div class="text-center">
+			<div class="row">
+				<div class="col-2" style="background-color: orange">
+				</div>
+
+				<div class="col-4">
+					<h3>Your time:</h3>
+				</div>
+				<div class="col-4">
+					<h3>@Model.ElapsedTime</h3>
+				</div>
+
+				<div class="col-2" style="background-color: orange">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-2" style="background-color: orange">
+				</div>
+
+				<div class="col-4">
+					<h3>Your best time:</h3>
+				</div>
+				<div class="col-4">
+					<h3>@Model.BestTime</h3>
+				</div>
+
+				<div class="col-2" style="background-color: orange">
+				</div>
+			</div>
+		</div>
+	}
+	else
+	{
+		<div class="row">
+			<div class="col-2" style="background-color: orange">
+			</div>
+
+			<div class="col-8">
+				<h2>You did it in 0 sec.</h2>
+			</div>
+
+			<div class="col-2" style="background-color: orange">
+			</div>
+		</div>
+	}
+	<br />
+	<hr />
+	<br />
+	<div class="text-center">
+		<a class="btn btn-primary btn-lg text-lg-center" style="width: 100px" asp-area="" asp-controller="Home" asp-action="Index">NO</a>
+	</div>
 
 </div>

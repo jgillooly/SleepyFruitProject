@@ -4,6 +4,11 @@ using SleepyFruitProject.Models;
 using System.Diagnostics;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Claims;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SleepyFruitProject.Controllers
 {
@@ -12,11 +17,17 @@ namespace SleepyFruitProject.Controllers
         public UserDal dal;
 
         private readonly ILogger<HomeController> _logger;
+        static HttpClient client = new HttpClient();
+        static string baseURL = "https://api.quotable.io/quotes/random?limit=2";
+
+        private static string Author = "";
+        private static string Quote = "";
 
         public HomeController(ILogger<HomeController> logger, UserDal indal)
         {
             _logger = logger;
             dal = indal;
+
         }
 
         public IActionResult Question1()
@@ -26,11 +37,17 @@ namespace SleepyFruitProject.Controllers
 
         public IActionResult Index()
         {
+            Getandwait();
+
+            ViewBag.Quote = Quote;
+            ViewBag.Author = Author;
+
             if (!User.Identity.IsAuthenticated)
-            { 
+            {
                 return View();
             }
-            if (dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)) == null ){
+            if (dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)) == null)
+            {
                 string UserID = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 dal.AddUser(new User(User.FindFirstValue(ClaimTypes.NameIdentifier), User.FindFirstValue(ClaimTypes.Name), User.FindFirstValue(ClaimTypes.Email)));
                 return View();
@@ -41,7 +58,7 @@ namespace SleepyFruitProject.Controllers
 
         [HttpGet]
         public IActionResult End_1()
-        { 
+        {
             return View();
         }
 
@@ -91,7 +108,8 @@ namespace SleepyFruitProject.Controllers
 
 
         //TODO:: go to quiz
-        public IActionResult QuizStart() {
+        public IActionResult QuizStart()
+        {
             return View();
         }
         //
@@ -99,23 +117,65 @@ namespace SleepyFruitProject.Controllers
         {
             return View();
         }
-		public IActionResult FinishLine()
-		{
-			return View();
-		}
+        public IActionResult FinishLine()
+        {
+            User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            temp.end_time = DateTime.Now;
+            temp.BestTime = temp.ElapsedTime;
+            dal.UpdateUser(temp);
+            return View(dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+        }
         public IActionResult GloatScreen()
         {
             return View();
         }
         public IActionResult yay()
-		{
-			return Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-		}
+        {
+            return Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        }
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        private async Task<int> GenerateQuote()
+        {
+            HttpClient client = new()
+            {
+                BaseAddress = new Uri("https://api.quotable.io")
+            };
+
+            var response = await client.GetAsync("/quotes/random?limit=2");
+            var content = await response.Content.ReadAsStringAsync();
+
+            var output = content.Split("},");
+
+            var index1 = output[0].IndexOf("content");
+            var index10 = output[0].IndexOf("author");
+            var quote = output[0].Substring(index1 + 10, index10 - index1 - 14);
+            var index2 = output[1].IndexOf("author");
+            var index20 = output[1].IndexOf("tags");
+            var author = output[1].Substring(index2 + 9, index20 - index2 - 12);
+            Author = author;
+            Quote = quote;
+
+            ViewBag.Quote = Quote;
+            ViewBag.Author = Author;
+            return 1;
+
+        }
+
+        private void Getandwait()
+        {
+            var task = GenerateQuote();
+            task.Wait(); // Blocks current thread until GetFooAsync task completes
+                         // For pedagogical use only: in general, don't do this!
+
+        }
     }
+
+
+
 }

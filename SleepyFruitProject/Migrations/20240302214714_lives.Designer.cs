@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SleepyFruitProject.Data;
 
@@ -11,9 +12,10 @@ using SleepyFruitProject.Data;
 namespace SleepyFruitProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240302214714_lives")]
+    partial class lives
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -228,10 +230,7 @@ namespace SleepyFruitProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<TimeSpan?>("BestTime")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan?>("ElapsedTime")
+                    b.Property<TimeSpan>("ElapsedTime")
                         .HasColumnType("time");
 
                     b.Property<string>("Email")
@@ -245,14 +244,8 @@ namespace SleepyFruitProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("end_time")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("question")
                         .HasColumnType("int");
-
-                    b.Property<DateTime?>("start_time")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
