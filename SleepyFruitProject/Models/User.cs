@@ -48,16 +48,9 @@ namespace SleepyFruitProject.Models
 					TheBestTime = value;
 				}
 			}
+		}
 		public int Lives = 3;
 		public int Skips = 0;
-
-		public User(int userId, string userName, string email, TimeSpan elapsedTime)
-		{
-			this.ID = userId;
-			this.UserName = userName;
-			this.Email = email;
-			this.ElapsedTime = elapsedTime;
-		}
 
 		//public User(int userId, string userName, string email, TimeSpan elapsedTime)
 		//{
