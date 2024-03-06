@@ -109,6 +109,8 @@ namespace SleepyFruitProject.Controllers
 		public UserDal dal;
 		private static int questionNum = 0;
 		private static int question22Count = 0;
+		private static int lives = 3;
+		private static int skips = 0;
 
 		public IActionResult Index()
 		{
@@ -125,8 +127,11 @@ namespace SleepyFruitProject.Controllers
 		public QuizController(UserDal indal)
 		{
 			dal = indal;
-
-		}
+            foreach (var item in questions) 
+            {
+				item.lives = lives;
+            }
+        }
 
 		[Authorize]
 		[HttpGet]
@@ -208,18 +213,24 @@ namespace SleepyFruitProject.Controllers
 				questions[21].Answers[2].correct = false;
 				questions[21].Answers[3].correct = false;
 
-				User temp = dal.GetUser(User.FindFirstValue(ClaimTypes.NameIdentifier));
-				temp.Lives -= 1;
+				lives--;
 
-				if (temp.Lives <= 0) { 
-					temp.Lives = 3;
-					temp.Skips = 0;
+				if (lives <= 0) { 
+					lives = 3;
+					skips = 0;
 					questionNum = 0;
-					dal.UpdateUser(temp);
+					foreach (var item in questions)
+					{
+						item.lives = lives;
+					}
 					RedirectToAction("Index", "Home");
 				}
 
-				dal.UpdateUser(temp);
+				foreach (var item in questions)
+				{
+					item.lives = lives;
+				}
+
 				return View(questions[questionNum]);
 			}
 		}

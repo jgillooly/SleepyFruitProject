@@ -172,10 +172,6 @@ namespace SleepyFruitProject.Controllers
             var task = GenerateQuote();
             task.Wait(); // Blocks current thread until GetFooAsync task completes
                          // For pedagogical use only: in general, don't do this!
-
         }
     }
-
-
-
 }
