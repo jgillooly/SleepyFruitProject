@@ -142,24 +142,31 @@ namespace SleepyFruitProject.Controllers
 
         private async Task<int> GenerateQuote()
         {
-            HttpClient client = new()
+            try
             {
-                BaseAddress = new Uri("https://api.quotable.io")
-            };
+                HttpClient client = new()
+                {
+                    BaseAddress = new Uri("https://api.quotable.io")
+                };
 
-            var response = await client.GetAsync("/quotes/random?limit=2");
-            var content = await response.Content.ReadAsStringAsync();
+                var response = await client.GetAsync("/quotes/random?limit=2");
+                var content = await response.Content.ReadAsStringAsync();
 
-            var output = content.Split("},");
+                var output = content.Split("},");
 
-            var index1 = output[0].IndexOf("content");
-            var index10 = output[0].IndexOf("author");
-            var quote = output[0].Substring(index1 + 10, index10 - index1 - 14);
-            var index2 = output[1].IndexOf("author");
-            var index20 = output[1].IndexOf("tags");
-            var author = output[1].Substring(index2 + 9, index20 - index2 - 12);
-            Author = author;
-            Quote = quote;
+                var index1 = output[0].IndexOf("content");
+                var index10 = output[0].IndexOf("author");
+                var quote = output[0].Substring(index1 + 10, index10 - index1 - 14);
+                var index2 = output[1].IndexOf("author");
+                var index20 = output[1].IndexOf("tags");
+                var author = output[1].Substring(index2 + 9, index20 - index2 - 12);
+                Author = author;
+                Quote = quote;
+            } catch (Exception ex)
+            {
+                Author = "Sun tzu - The art of war";
+                Quote = "The best fruit is a sleepy fruit";
+            }
 
             ViewBag.Quote = Quote;
             ViewBag.Author = Author;
