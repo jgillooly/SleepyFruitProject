@@ -25,6 +25,8 @@ namespace SleepyFruitProject.Controllers
         private static string Author = "";
         private static string Quote = "";
 
+
+
         public HomeController(ILogger<HomeController> logger, UserDal indal)
         {
             _logger = logger;
@@ -90,9 +92,7 @@ namespace SleepyFruitProject.Controllers
             }
             if (ModelState.IsValid)
             {
-                //dal.AddMovie(m);
                 return RedirectToAction("GloatScreen", "Home");
-                //return View();
             }
             return View();
         }
@@ -101,12 +101,6 @@ namespace SleepyFruitProject.Controllers
             return View();
         }
 
-        ////TODO:: actually log in
-        //[HttpPost]
-        //public IActionResult LogIn(string email, string password)
-        //{ 
-        //    return RedirectToAction("Index", "Home");
-        //}
 
 
         //TODO:: go to quiz
@@ -173,7 +167,7 @@ namespace SleepyFruitProject.Controllers
 
         }
 
-        private void Getandwait()
+		private void Getandwait()
         {
             var task = GenerateQuote();
             task.Wait(); // Blocks current thread until GetFooAsync task completes

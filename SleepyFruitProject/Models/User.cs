@@ -24,11 +24,11 @@ namespace SleepyFruitProject.Models
 		public DateTime? start_time { get; set; }
 		public DateTime? end_time { get; set; }
 
-		public TimeSpan? ElapsedTime 
+		public TimeSpan? ElapsedTime
 		{
 			get
-			{ 
-				return (end_time - start_time); 
+			{
+				return (end_time - start_time);
 			}
 			set { }
 		}
@@ -52,10 +52,10 @@ namespace SleepyFruitProject.Models
 
 		//public User(int userId, string userName, string email, TimeSpan elapsedTime)
 		//{
-		//	this.ID = userId;
-		//	this.UserName = userName;
-		//	this.Email = email;
-		//	this.ElapsedTime = elapsedTime;
+		//    this.ID = userId;
+		//    this.UserName = userName;
+		//    this.Email = email;
+		//    this.ElapsedTime = elapsedTime;
 		//}
 
 		public User(string UserID, string UserName, string Email)
